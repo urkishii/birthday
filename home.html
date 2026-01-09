@@ -78,16 +78,22 @@
     }
 
     function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerHTML = '❤️';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.position = 'fixed';
-        heart.style.bottom = '-5vh';
-        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-        document.body.appendChild(heart);
-        setTimeout(() => { heart.remove(); }, 5000);
-    }
+    const heart = document.createElement('div');
+    heart.innerHTML = '❤️';
+    heart.style.position = 'fixed';
+    heart.style.bottom = '-10vh';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+    heart.style.color = '#ff4d6d';
+    heart.style.zIndex = '9999';
+    heart.style.pointerEvents = 'none';
+    heart.style.userSelect = 'none';
+    heart.style.animation = `floatUp ${Math.random() * 3 + 2}s linear forwards`;
+    document.body.appendChild(heart);
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
 
     function startHearts() {
         setInterval(createHeart, 300);
