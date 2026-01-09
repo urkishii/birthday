@@ -43,9 +43,9 @@ h1 {
 }
 
 .birthday-img {
-    width: 100%;       /* Match the width of the white box */
-    max-width: 320px;  /* Stop it from getting too big */
-    height: auto;      /* Keep the photo's shape */
+    width: 100%;
+    max-width: 320px;
+    height: auto;
     display: block;
     margin: 0 auto 15px auto;
     border-radius: 10px;
