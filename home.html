@@ -126,20 +126,45 @@
         setInterval(createHeart, 300);
     }
 
-let slideIndex = 0;
+let slideInterval; // Variable to hold the timer
 
-    function runSlideshow() {
-        const slides = document.querySelectorAll(".slideshow-img");
-        if (slides.length === 0) return;
-        slides.forEach(slide => slide.classList.remove("active"));
+function changePage(step) {
+    document.getElementById(`page${currentPage}`).style.display = 'none';
+    currentPage += step;
+    document.getElementById(`page${currentPage}`).style.display = 'block';
     
-        slideIndex++;
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
-            }
+    document.getElementById('backBtn').style.display = (currentPage === 1) ? 'none' : 'inline-block';
+    document.getElementById('nextBtn').style.display = (currentPage === totalPages) ? 'none' : 'inline-block';
     
-        slides[slideIndex].classList.add("active");
+    window.scrollTo(0, 0);
+
+    // --- SLIDESHOW TRIGGER ---
+    // If we are on Page 3, start the slideshow. Otherwise, stop it.
+    if (currentPage === 3) {
+        if (!slideInterval) {
+            slideInterval = setInterval(runSlideshow, 3000);
+        }
+    } else {
+        clearInterval(slideInterval);
+        slideInterval = null;
+    }
 }
+
+let slideIndex = 0;
+function runSlideshow() {
+    const slides = document.querySelectorAll(".slideshow-img");
+    if (slides.length === 0) return;
+    
+    slides.forEach(slide => slide.classList.remove("active"));
+    
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    }
+    
+    slides[slideIndex].classList.add("active");
+}
+    
 setInterval(runSlideshow, 3000);
 </script>
 </body>
