@@ -25,7 +25,7 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -36,71 +36,71 @@ body {
     margin: 40px auto; 
 }
 
-h1 {
-    color: var(--dark-pink);
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
+h1 { color: var(--dark-pink); margin-bottom: 10px; }
 
-.birthday-img{
+/* Fixed Image Styling for all pages */
+.birthday-img {
     width: 100%;
-    max-width: 320px;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
     display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 10px;
 }
 
-.birthday-img2 {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 10px;
-}
-
-.message {
-    display: none; 
-    font-size: 1.1rem;
-    line-height: 1.6;
-    animation: fadeIn 2s forwards;
+.page p {
     text-align: left;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .nav-container {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between buttons */
-    margin-top: 30px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.page {
-    animation: fadeIn 0.8s ease;
+/* Animations */
+.page { animation: fadeIn 0.8s ease forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-#backBtn {
-    background-color: #f8f9fa;
-    color: #d4418e;
-    border: 2px solid #d4418e;
-}
-
-button {
-    background-color: var(--dark-pink);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1rem;
+/* Button & Clickable Text */
+.click-text {
+    font-size: 1.2rem;
+    color: var(--dark-pink);
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(212, 65, 142, 0.3);
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--dark-pink);
+    border-radius: 50px;
+    background: white;
+    animation: pulseText 1.5s infinite ease-in-out;
 }
 
-button:hover {
-    transform: scale(1.05);
+@keyframes pulseText {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
+.vol {
+    color: var(--dark-pink);
+    font-size: 0.85rem;
+    font-style: italic;
+    animation: pulseVolume 2s infinite;
+}
+
+@keyframes pulseVolume {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Background Hearts */
 .heart-wrapper {
     position: fixed;
     bottom: -10vh;
@@ -110,116 +110,30 @@ button:hover {
 }
 
 .heart-element {
-    /* Color and swaying */
     color: rgba(212, 65, 142, 0.4);
     display: inline-block;
     animation: sway 3s ease-in-out infinite alternate;
 }
 
 @keyframes floatUp {
-    0% { 
-        transform: translateY(0); 
-        opacity: 0; 
-    }
-    10% { 
-        opacity: 1; 
-    }
-    90% { 
-        opacity: 1; 
-    }
-    100% { 
-        transform: translateY(-120vh);
-        opacity: 0; 
-    }
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
 }
 
 @keyframes sway {
-    0% { transform: translateX(-20px) rotate(-15deg); }
-    100% { transform: translateX(20px) rotate(15deg); }
+    from { transform: translateX(-20px) rotate(-15deg); }
+    to { transform: translateX(20px) rotate(15deg); }
 }
 
-@keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(15px);
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0);
-    }
-}
-
-.page p {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-#wish-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.vol {
-    color: #d4418e;
-    font-size: 0.9rem;
-    font-style: italic;
-    font-weight: bold;
-    margin-top: 15px;
-    animation: pulseVolume 2s infinite; 
-}
-
-@keyframes pulseVolume {
-    0% {
-        transform: scale(1);
-        opacity: 0.6;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.6;
-    }
-}
-
-
-.click-text {
-    margin-top: 25px;
-    font-size: 1.2rem;
-    color: var(--dark-pink) !important;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid var(--dark-pink);
-    border-radius: 50px;
-    background: white;
-    box-shadow: 0 4px 15px rgba(212, 65, 142, 0.2);
-    
-    animation: pulseText 1.5s infinite ease-in-out !important;
-    transition: all 0.3s ease;
-}
-
-.click-text:active {
-    transform: scale(0.95);
+button {
     background-color: var(--dark-pink);
-    color: white !important;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
-@keyframes pulseText {
-    0% { 
-        transform: scale(1);
-        box-shadow: 0 4px 15px rgba(212, 65, 142, 0.2);
-    }
-    50% { 
-        transform: scale(1.08); 
-        box-shadow: 0 6px 20px rgba(212, 65, 142, 0.4);
-    }
-    100% { 
-        transform: scale(1);
-        box-shadow: 0 4px 15px rgba(212, 65, 142, 0.2);
-    }
-}
+#backBtn { background: white; color: var(--dark-pink); border: 1px solid var(--dark-pink); }
