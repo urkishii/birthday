@@ -8,30 +8,29 @@
 </head>
 <body>
     <audio id="birthdaySong" loop>
-    <source src="./music.mp3" type="audio/mpeg">    
+        <source src="./music.mp3" type="audio/mpeg">
     </audio>
+
     <div class="container">
         <div id="messagemain">
             <h1>Happy Birthday, Aki! 🧸🤍</h1>
             <p>Pwede ka na makulong. Yayayayayay!</p>
-       <div id="gift-trigger" style="margin: 30px auto;">
-            <p class="click-text" onclick="showMessage()">🎁 Click here if you love me 🎁</p>
+            <div id="gift-trigger" style="margin: 30px auto;">
+                <p class="click-text" onclick="showMessage()">🎁 Click here if you love me 🎁</p>
+            </div>
             <p class="vol"> Increase volume, Aki </p>
         </div>
-    </div>
-
-</div>
 
         <div id="wish-container" style="display: none;">
             
             <div id="page1" class="page">
                 <img src="aki.jpeg" alt="Happy Birthday Aki" class="birthday-img">
                 <p>
-                    First of all, happy legality! Happiest birthday to you. my baby. I love you so so much. I hope you enjoy your day! Charm Day! 
+                    First of all, happy legality! Happiest birthday to you, my baby. I love you so so much. I hope you enjoy your day! Charm Day! 
                     <br><br>
-                    I'm so sorry if lagi tayong nag-aaway over small things. I'm sorry if palagi akong mainitin ulo, and palagi kitang pinapagalitan. I'm sorry if may times na you're crying over our arguments.
+                    I'm so sorry if lagi tayong nag-aaway over small things. I'm sorry if palagi akong mainitin ulo, and palagi kitang pinapagalitan.
                     <br><br>
-                    Thank you for always being there for me. Thank you for always supporting me. Mahal na mahal kita.
+                    Thank you for always being there for me. Mahal na mahal kita.
                     <br><br>
                     Natatangi, <br>
                     <strong>Lukey</strong>
@@ -39,20 +38,24 @@
             </div>
 
             <div id="page2" class="page" style="display: none;">
-                <img src="aki2.jpeg" alt="To My Aki" class="birthday-img2">
+                <img src="aki2.jpeg" alt="To My Aki" class="birthday-img">
                 <p>
                     Hello, my little Aki. You've grown well, baby! I wished I could've watched over you. Sana nakilala kita nang mas maaga.
                     <br><br>
                     I know you have been hurt, Aki. Don't worry, I am here to make sure that you get to experience everything about love. 
-                    Don't be afraid to risk everything with me, my Aki. With you by my side, I promise that we can go through all of these hurdles together.
-                    <br><br>
-                    To my little Aki, don't worry, I will take care of you right now. I will make sure that your dreams will come true.
-                    Please, entrust yourself with me. I love you with all of me, with everything I have.
-                    <br><br>
+                    With you by my side, I promise that we can go through all hurdles together.
                 </p>
             </div>
 
-            <div class="nav-container" id="navButtons" style="margin-top: 20px;">
+            <div id="page3" class="page" style="display: none;">
+                <img src="aki3.jpeg" alt="Our Future" class="birthday-img">
+                <p>
+                    To my little Aki, don't worry, I will take care of you right now. I will make sure that your dreams will come true.
+                    Please, entrust yourself with me. I love you with all of me, with everything I have. ❤️
+                </p>
+            </div>
+
+            <div class="nav-container">
                 <button id="backBtn" onclick="changePage(-1)" style="display: none;">Back</button>
                 <button id="nextBtn" onclick="changePage(1)">Next</button>
             </div>
@@ -61,7 +64,7 @@
 
 <script>
     let currentPage = 1;
-    const totalPages = 2;
+    const totalPages = 3;
 
     function showMessage() {
         const song = document.getElementById('birthdaySong');
@@ -69,15 +72,17 @@
         
         document.getElementById('messagemain').style.display = 'none';
         document.getElementById('wish-container').style.display = 'block';
-            startHearts();
+        startHearts();
     }
 
     function changePage(step) {
         document.getElementById(`page${currentPage}`).style.display = 'none';
         currentPage += step;
         document.getElementById(`page${currentPage}`).style.display = 'block';
+        
         document.getElementById('backBtn').style.display = (currentPage === 1) ? 'none' : 'inline-block';
         document.getElementById('nextBtn').style.display = (currentPage === totalPages) ? 'none' : 'inline-block';
+        
         window.scrollTo(0, 0);
     }
 
