@@ -59,6 +59,24 @@ h1 {
     text-align: left;
 }
 
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin-top: 30px;
+}
+
+.page {
+    animation: fadeIn 0.8s ease;
+}
+
+/* Optional: Make the Back button look different */
+#backBtn {
+    background-color: #f8f9fa;
+    color: #d4418e;
+    border: 2px solid #d4418e;
+}
+
 button {
     background-color: var(--dark-pink);
     color: white;
