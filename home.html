@@ -79,20 +79,16 @@
 
     function createHeart() {
     const heart = document.createElement('div');
+    heart.className = 'heart';
     heart.innerHTML = '❤️';
-    heart.style.position = 'fixed';
-    heart.style.bottom = '-10vh';
+    
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
-    heart.style.color = '#ff4d6d';
-    heart.style.zIndex = '1';
-    heart.style.pointerEvents = 'none';
-    heart.style.userSelect = 'none';
-    heart.style.animation = `floatUp ${Math.random() * 3 + 2}s linear forwards`;
+    const size = Math.random() * 15 + 15;
+    heart.style.fontSize = size + 'px';
     document.body.appendChild(heart);
     setTimeout(() => {
         heart.remove();
-    }, 5000);
+    }, 8000);
 }
 
     function startHearts() {
