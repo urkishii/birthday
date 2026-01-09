@@ -13,11 +13,12 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;          
             min-height: 100vh;
             background: linear-gradient(135deg, var(--pink), var(--rose));
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-y: auto;
+            overflow-x: hidden;
             color: #4a4a4a;
         }
 
