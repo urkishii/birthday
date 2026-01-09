@@ -203,7 +203,6 @@ button:hover {
     animation: giftShake 2s infinite;
 }
 
-/* The Ribbon/Lid */
 .gift-lid {
     position: absolute;
     width: 90px;
@@ -220,7 +219,7 @@ button:hover {
     position: absolute;
     width: 15px;
     height: 80px;
-    background-color: #ffc0cb; /* Vertical Ribbon */
+    background-color: #ffc0cb;
     left: 32px;
 }
 
