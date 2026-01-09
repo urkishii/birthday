@@ -42,7 +42,16 @@ h1 {
     margin-bottom: 10px;
 }
 
-.birthday-img, .birthday-img2 {
+.birthday-img{
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
+}
+
+.birthday-img2 {
     width: 100%;
     max-width: 320px;
     height: auto;
