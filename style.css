@@ -149,28 +149,19 @@ button {
 
 #backBtn { background: white; color: var(--dark-pink); border: 1px solid var(--dark-pink); }
 
-/* --- FINALE PAGE ANIMATIONS --- */
-
 .finale {
     text-align: center !important;
 }
 
 .big-hb {
-    font-size: 3.5rem; /* Massive text */
+    font-size: 3.5rem;
     margin-top: 20px;
     line-height: 1.1;
-    /* Rainbow Color Effect */
     background: linear-gradient(to right, #d4418e, #ff4d6d, #ffafbd, #ffc3a0, #d4418e);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: rainbowText 3s linear infinite, bounceTitle 2s infinite ease-in-out;
-}
-
-.floating-emojis {
-    font-size: 2rem;
-    margin: 20px 0;
-    animation: pulseVolume 1.5s infinite;
 }
 
 .celebration-box {
@@ -179,8 +170,6 @@ button {
     display: inline-block;
     animation: wobble 1s infinite alternate ease-in-out;
 }
-
-/* New Keyframes */
 
 @keyframes rainbowText {
     to { background-position: 200% center; }
@@ -196,7 +185,6 @@ button {
     to { transform: rotate(10deg) scale(1.1); }
 }
 
-/* Ensure Page 4 content is centered */
 .finale-content {
     display: flex;
     flex-direction: column;
