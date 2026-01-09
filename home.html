@@ -78,16 +78,23 @@
     }
 
     function createHeart() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'heart-wrapper';
+    
     const heart = document.createElement('div');
-    heart.className = 'heart';
+    heart.className = 'heart-element';
     heart.innerHTML = '❤️';
     
-    heart.style.left = Math.random() * 100 + 'vw';
+    wrapper.style.left = Math.random() * 100 + 'vw';
+    
     const size = Math.random() * 15 + 15;
     heart.style.fontSize = size + 'px';
-    document.body.appendChild(heart);
+    
+    wrapper.appendChild(heart);
+    document.body.appendChild(wrapper);
+    
     setTimeout(() => {
-        heart.remove();
+        wrapper.remove();
     }, 8000);
 }
 
