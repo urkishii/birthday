@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pangit ❤️</title>
-    <link rel = stylesheet href = "style.css">
+    <title>Pangit ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -15,51 +15,69 @@
             <button onclick="showMessage()">Click if you love me ^^</button>
         </div>
 
-        <div id="wish" class="message">
-        <img src="aki.jpeg" alt="Happy Birthday Aki" class="birthday-img">
-            <p>
-                First of all, happy legality! Happiest birthday to you. my baby. I love you so so much. I hope you enjoy your day! Charm Day! 
-                <br><br>
-              	I'm so sorry if lagi tayong nag-aaway over small things. I'm sorry if palagi akong mainitin ulo, and palagi kitang pinapagalitan. I'm sorry if may times na you're crying over our arguments.
-                <br><br>
-              	Thank you for always being there for me. Thank you for always supporting me. Mahal na mahal kita, and I know I cannot promise you everything in this world, but I will do my best to live our lives to its fullest. To more years with you, Aki. Thank you for existing, and thank you for being mine.
-                <br><br>
-                Natatangi, <br>
-                <strong>Lukey</strong>
-            </p>
-        </div>
-        
-        <div id="page2" class="page" style="display: none;">
-            <h2>Another Thing...</h2>
+        <div id="wish-container" style="display: none;">
+            
+            <div id="page1" class="page">
+                <img src="aki.jpeg" alt="Happy Birthday Aki" class="birthday-img">
+                <p>
+                    First of all, happy legality! Happiest birthday to you. my baby. I love you so so much. I hope you enjoy your day! Charm Day! 
+                    <br><br>
+                    I'm so sorry if lagi tayong nag-aaway over small things. I'm sorry if palagi akong mainitin ulo, and palagi kitang pinapagalitan. I'm sorry if may times na you're crying over our arguments.
+                    <br><br>
+                    Thank you for always being there for me. Thank you for always supporting me. Mahal na mahal kita.
+                    <br><br>
+                    Natatangi, <br>
+                    <strong>Lukey</strong>
+                </p>
+            </div>
+
+            <div id="page2" class="page" style="display: none;">
+                <h2>Another Thing...</h2>
                 <p>I forgot to say that you look extra beautiful when you smile. 
                    Thank you for being my peace in this crazy world. 🧸✨
                 </p>
-        </div>
+            </div>
 
-        <div class="nav-container">
-            <button id="backBtn" onclick="changePage(-1)" style="display: none;">Back</button>
-            <button id="nextBtn" onclick="changePage(1)">Next</button>
+            <div class="nav-container" id="navButtons" style="margin-top: 20px;">
+                <button id="backBtn" onclick="changePage(-1)" style="display: none;">Back</button>
+                <button id="nextBtn" onclick="changePage(1)">Next</button>
+            </div>
         </div>
-    </div>
     </div>
 
 <script>
     let currentPage = 1;
     const totalPages = 2;
 
-function showMessage() {
-    document.getElementById('messagemain').style.display = 'none';
-    document.getElementById('wish').style.display = 'block';
-    startHearts();
-}
+    function showMessage() {
+        document.getElementById('messagemain').style.display = 'none';
+        document.getElementById('wish-container').style.display = 'block';
+        startHearts();
+    }
 
-function changePage(step) {
-    document.getElementById(`page${currentPage}`).style.display = 'none';
-    currentPage += step;
-    document.getElementById(`page${currentPage}`).style.display = 'block';
-    document.getElementById('backBtn').style.display = (currentPage === 1) ? 'none' : 'inline-block';
-    document.getElementById('nextBtn').style.display = (currentPage === totalPages) ? 'none' : 'inline-block';
-}
+    function changePage(step) {
+        document.getElementById(`page${currentPage}`).style.display = 'none';
+        currentPage += step;
+        document.getElementById(`page${currentPage}`).style.display = 'block';
+        document.getElementById('backBtn').style.display = (currentPage === 1) ? 'none' : 'inline-block';
+        document.getElementById('nextBtn').style.display = (currentPage === totalPages) ? 'none' : 'inline-block';
+    }
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.position = 'fixed';
+        heart.style.bottom = '-5vh';
+        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 5000);
+    }
+
+    function startHearts() {
+        setInterval(createHeart, 300);
+    }
 </script>
 </body>
 </html>
