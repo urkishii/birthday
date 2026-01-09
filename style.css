@@ -102,19 +102,36 @@ button:hover {
 }
 
 .heart {
-    position: fixed !important; 
+    position: fixed !important;
     bottom: -10vh !important;
-    color: #ff4d6d !important;
-    font-size: 30px !important;
+    color: rgba(212, 65, 142, 0.5) !important; 
+    font-size: 20px !important;
     user-select: none;
     pointer-events: none;
     z-index: 9999 !important;
-    animation: floatUp 5s linear forwards !important;
+    animation: floatUp 6s linear forwards, sway 3s ease-in-out infinite alternate !important;
 }
 
 @keyframes floatUp {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    from { margin-left: -20px; }
+    to { margin-left: 20px; }
 }
 
 @keyframes fadeIn {
