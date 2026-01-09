@@ -99,7 +99,7 @@ button:hover {
     font-size: 25px;
     user-select: none;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 9999 !important;
     animation: float 5s linear infinite;
 }
 
