@@ -38,7 +38,19 @@ body {
 
 h1 { color: var(--dark-pink); margin-bottom: 10px; }
 
-/* Fixed Image Styling for all pages */
+#wish-container {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    width: 100%;
+    overflow: hidden;
+}
 .birthday-img {
     width: 100%;
     height: 300px;
@@ -61,7 +73,6 @@ h1 { color: var(--dark-pink); margin-bottom: 10px; }
     margin-top: 20px;
 }
 
-/* Animations */
 .page { animation: fadeIn 0.8s ease forwards; }
 
 @keyframes fadeIn {
@@ -69,7 +80,7 @@ h1 { color: var(--dark-pink); margin-bottom: 10px; }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Button & Clickable Text */
+
 .click-text {
     font-size: 1.2rem;
     color: var(--dark-pink);
