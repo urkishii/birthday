@@ -67,11 +67,20 @@
     let currentPage = 1;
     const totalPages = 2;
 
-    function showMessage() {
+    function openGift() {
+    const gift = document.querySelector('.gift-box');
+    
+    gift.classList.add('open-animation');
+    
+    setTimeout(() => {
+        showMessage();
+    }, 500);
+}
+
+function showMessage() {
     const song = document.getElementById('birthdaySong');
-    song.play().catch(error => {
-        console.log("Autoplay was prevented, but it usually works after a click!");
-    });
+    song.play().catch(e => console.log("Music error"));
+    
     document.getElementById('messagemain').style.display = 'none';
     document.getElementById('wish-container').style.display = 'block';
     startHearts();
