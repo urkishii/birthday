@@ -104,12 +104,12 @@ button:hover {
 .heart {
     position: fixed !important;
     bottom: -10vh !important;
-    color: rgba(212, 65, 142, 0.5) !important; 
+    color: rgba(255, 175, 189, 0.4) !important; 
     font-size: 20px !important;
     user-select: none;
     pointer-events: none;
-    z-index: 9999 !important;
-    animation: floatUp 6s linear forwards, sway 3s ease-in-out infinite alternate !important;
+    z-index: 1 !important; 
+    animation: floatUp 8s linear forwards, sway 3s ease-in-out infinite alternate !important;
 }
 
 @keyframes floatUp {
