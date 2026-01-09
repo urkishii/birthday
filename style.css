@@ -17,7 +17,7 @@
             min-height: 100vh;
             background: linear-gradient(135deg, var(--pink), var(--rose));
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
+            overflow-y: auto;
             color: #4a4a4a;
         }
 
