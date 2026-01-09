@@ -172,12 +172,6 @@ button {
     animation: rainbowText 3s linear infinite;
 }
 
-.floating-emojis {
-    font-size: 2rem;
-    margin: 20px 0;
-    opacity: 0.8;
-}
-
 .celebration-box {
     font-size: 4rem;
     margin-top: 10px;
