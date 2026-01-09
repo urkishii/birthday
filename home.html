@@ -13,15 +13,9 @@
         <div id="messagemain">
             <h1>Happy Birthday, Aki! 🧸🤍</h1>
             <p>Pwede ka na makulong. Yayayayayay!</p>
-        <div class="gift-container" onclick="openGift()">
-        <div class="gift-box">
-            <div class="gift-lid"></div>
-            <div class="gift-body">
-                <div class="gift-bow"></div>
-            </div>
-        </div>
-        <p class="click-text">Tap the gift to open!</p>
-    </div>
+       <div id="gift-trigger" onclick="showMessage()" style="cursor: pointer; margin: 30px auto;">
+    <p class="click-text">🎁 Click here to open your surprise! 🎁</p>
+</div>
 
     <p class="vol"> Increase volume, Aki </p>
 </div>
@@ -67,24 +61,14 @@
     let currentPage = 1;
     const totalPages = 2;
 
-    function openGift() {
-    const gift = document.querySelector('.gift-box');
-    
-    gift.classList.add('open-animation');
-    
-    setTimeout(() => {
-        showMessage();
-    }, 500);
-}
-
-function showMessage() {
-    const song = document.getElementById('birthdaySong');
-    song.play().catch(e => console.log("Music error"));
-    
-    document.getElementById('messagemain').style.display = 'none';
-    document.getElementById('wish-container').style.display = 'block';
-    startHearts();
-}
+    function showMessage() {
+        const song = document.getElementById('birthdaySong');
+        song.play().catch(e => console.log("Music error"));
+        
+        document.getElementById('messagemain').style.display = 'none';
+        document.getElementById('wish-container').style.display = 'block';
+            startHearts();
+    }
 
     function changePage(step) {
         document.getElementById(`page${currentPage}`).style.display = 'none';
@@ -92,28 +76,22 @@ function showMessage() {
         document.getElementById(`page${currentPage}`).style.display = 'block';
         document.getElementById('backBtn').style.display = (currentPage === 1) ? 'none' : 'inline-block';
         document.getElementById('nextBtn').style.display = (currentPage === totalPages) ? 'none' : 'inline-block';
+        window.scrollTo(0, 0);
     }
 
     function createHeart() {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'heart-wrapper';
-    
-    const heart = document.createElement('div');
-    heart.className = 'heart-element';
-    heart.innerHTML = '❤️';
-    
-    wrapper.style.left = Math.random() * 100 + 'vw';
-    
-    const size = Math.random() * 15 + 15;
-    heart.style.fontSize = size + 'px';
-    
-    wrapper.appendChild(heart);
-    document.body.appendChild(wrapper);
-    
-    setTimeout(() => {
-        wrapper.remove();
-    }, 8000);
-}
+        const wrapper = document.createElement('div');
+        wrapper.className = 'heart-wrapper';
+        const heart = document.createElement('div');
+        heart.className = 'heart-element';
+        heart.innerHTML = '❤️';
+        wrapper.style.left = Math.random() * 100 + 'vw';
+        const size = Math.random() * 15 + 15;
+        heart.style.fontSize = size + 'px';
+        wrapper.appendChild(heart);
+        document.body.appendChild(wrapper);
+        setTimeout(() => { wrapper.remove(); }, 8000);
+    }
 
     function startHearts() {
         setInterval(createHeart, 300);
