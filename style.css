@@ -175,14 +175,9 @@ button {
     to { background-position: 200% center; }
 }
 
-@keyframes bounceTitle {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
 @keyframes wobble {
     from { transform: rotate(-10deg) scale(1); }
-    to { transform: rotate(10deg) scale(1.1); }
+    to { transform: rotate(10deg) scale(1); }
 }
 
 .finale-content {
