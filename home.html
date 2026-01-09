@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <audio id="birthdaySong" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
     <div class="container">
         <div id="messagemain">
             <h1>Happy Birthday, Aki! 🧸🤍</h1>
@@ -50,10 +52,14 @@
     const totalPages = 2;
 
     function showMessage() {
-        document.getElementById('messagemain').style.display = 'none';
-        document.getElementById('wish-container').style.display = 'block';
-        startHearts();
-    }
+    const song = document.getElementById('birthdaySong');
+    song.play().catch(error => {
+        console.log("Autoplay was prevented, but it usually works after a click!");
+    });
+    document.getElementById('messagemain').style.display = 'none';
+    document.getElementById('wish-container').style.display = 'block';
+    startHearts();
+}
 
     function changePage(step) {
         document.getElementById(`page${currentPage}`).style.display = 'none';
