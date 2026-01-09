@@ -125,6 +125,22 @@
     function startHearts() {
         setInterval(createHeart, 300);
     }
+
+let slideIndex = 0;
+
+    function runSlideshow() {
+        const slides = document.querySelectorAll(".slideshow-img");
+        if (slides.length === 0) return;
+        slides.forEach(slide => slide.classList.remove("active"));
+    
+        slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+    
+        slides[slideIndex].classList.add("active");
+}
+setInterval(runSlideshow, 3000);
 </script>
 </body>
 </html>
