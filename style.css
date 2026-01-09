@@ -43,13 +43,12 @@ h1 {
 }
 
 .birthday-img {
-    width: 100% !important;
-    height: auto;
-    max-width: 100%;
-    border-radius: 15px;
-    margin: 10px 0 20px 0;
+    width: 100%;       /* Match the width of the white box */
+    max-width: 320px;  /* Stop it from getting too big */
+    height: auto;      /* Keep the photo's shape */
     display: block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
 }
 
 .message {
