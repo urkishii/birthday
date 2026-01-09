@@ -111,7 +111,6 @@ h1 { color: var(--dark-pink); margin-bottom: 10px; }
     50% { opacity: 1; }
 }
 
-/* Background Hearts */
 .heart-wrapper {
     position: fixed;
     bottom: -10vh;
@@ -149,6 +148,31 @@ button {
 
 #backBtn { background: white; color: var(--dark-pink); border: 1px solid var(--dark-pink); }
 
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 300px;
+    margin: 0 auto 15px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.slideshow-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow-img.active {
+    opacity: 1;
+}
 
 .finale {
     text-align: center !important;
