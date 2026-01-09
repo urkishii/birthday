@@ -28,30 +28,38 @@
                 <strong>Lukey</strong>
             </p>
         </div>
+        
+        <div id="page2" class="page" style="display: none;">
+            <h2>Another Thing...</h2>
+                <p>I forgot to say that you look extra beautiful when you smile. 
+                   Thank you for being my peace in this crazy world. 🧸✨
+                </p>
+        </div>
+
+        <div class="nav-container">
+            <button id="backBtn" onclick="changePage(-1)" style="display: none;">Back</button>
+            <button id="nextBtn" onclick="changePage(1)">Next</button>
+        </div>
     </div>
+    </div>
+
 <script>
-    function showMessage() {
-            document.getElementById('messagemain').style.display = 'none';
-            document.getElementById('wish').style.display = 'block';
-            startHearts();
-        }
+    let currentPage = 1;
+    const totalPages = 2;
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(heart);
+function showMessage() {
+    document.getElementById('messagemain').style.display = 'none';
+    document.getElementById('wish').style.display = 'block';
+    startHearts();
+}
 
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-
-        function startHearts() {
-            setInterval(createHeart, 300);
-        }
+function changePage(step) {
+    document.getElementById(`page${currentPage}`).style.display = 'none';
+    currentPage += step;
+    document.getElementById(`page${currentPage}`).style.display = 'block';
+    document.getElementById('backBtn').style.display = (currentPage === 1) ? 'none' : 'inline-block';
+    document.getElementById('nextBtn').style.display = (currentPage === totalPages) ? 'none' : 'inline-block';
+}
 </script>
 </body>
 </html>
