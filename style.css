@@ -130,8 +130,8 @@ button:hover {
 }
 
 @keyframes sway {
-    from { margin-left: -20px; }
-    to { margin-left: 20px; }
+    from { transform: translateX(-20px); }
+    to { transform: translateX(20px); }
 }
 
 @keyframes fadeIn {
