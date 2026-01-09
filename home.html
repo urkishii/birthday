@@ -126,7 +126,7 @@
         setInterval(createHeart, 300);
     }
 
-let slideInterval; // Variable to hold the timer
+let slideInterval;
 
 function changePage(step) {
     document.getElementById(`page${currentPage}`).style.display = 'none';
@@ -138,11 +138,9 @@ function changePage(step) {
     
     window.scrollTo(0, 0);
 
-    // --- SLIDESHOW TRIGGER ---
-    // If we are on Page 3, start the slideshow. Otherwise, stop it.
     if (currentPage === 3) {
         if (!slideInterval) {
-            slideInterval = setInterval(runSlideshow, 3000);
+            slideInterval = setInterval(runSlideshow, 4500);
         }
     } else {
         clearInterval(slideInterval);
